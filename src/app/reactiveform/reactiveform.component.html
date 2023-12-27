@@ -1,0 +1,22 @@
+<p>
+  reactiveform works!FormControlName is used for binding the html form element to ts file.
+ngSUbmit for doing event function call
+</p>
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+  <input type="text" formControlName="user" 
+  placeholder="Enter Name" name="user">
+  <br>
+  <span style="color:red" *ngIf="user && user.invalid && user.touched">this field is not valid</span>
+  <br>
+  <input type="password" formControlName="password" 
+  placeholder="Enter password" name="password">
+  <br>
+  <span style="color:red" *ngIf="password && password.invalid && password.touched">this field is not valid</span>
+  <br>
+<button [disabled]="loginForm.invalid">Login</button>
+</form>
+ <div *ngFor="let x of users;i as index;">{{x.email}} from reactive form</div> 
+<!-- <app-reactiveform-list [users]="users | async"></app-reactiveform-list>
+ -->
+
+

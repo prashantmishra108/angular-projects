@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+<div style="text-align:center">
+  <h4>
+    Welcome to {{ title }}!
+    {{b}}
+    {{myVarObject}}
+    
+    {{myVarObject.b}}
+    <br>
+    {{childData}}
+  </h4>
+</div>
+<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+<ul>
+  <li>
+    <a routerLink="/">Home</a> |  
+    <a routerLinkActive="active" 
+    [routerLinkActiveOptions]="{exact: true}"
+     routerLink="/user">User</a>  |  
+    <a [routerLink]="['rxjss',1]">Rxjss</a>   |  
+    <a routerLink="/reactiveform">ReactiveFormExplaination</a>   
+    
+  </li>
+
+ <!--  <app-rxjs dataFromAppComponent={{a}}></app-rxjs>
+<app-rxjs [dataFromAppComponent]="title">this is mee as part of content projects and i can call
+  ok ngafterContentInit and checked both of the child class. </app-rxjs> -->
+<app-user  (dataFromCurrentUserComponentToAppComponent)="childData=$event"></app-user>
+  <div *ngIf="userAdded">User added button clicked</div>
+</ul>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <router-outlet></router-outlet>
+  </div>
+</div>

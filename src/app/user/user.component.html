@@ -1,0 +1,25 @@
+<p >
+  user component works!
+</p>
+<br>
+<button type="button" (click)="onclick()">UserComponetOutputEmitter</button>
+<table>
+<tr>
+<td>
+  <div *ngFor="let x of products;i as index;">{{x.name}}</div>
+</td>  
+<td>
+    <div>
+    <ul *ngIf="products">
+      <li>hi</li>
+      <li *ngFor="let movie of products">
+          {{ movie.id }} 
+      </li>
+    </ul>
+    </div>
+</td>
+
+</tr>
+
+</table>
+
